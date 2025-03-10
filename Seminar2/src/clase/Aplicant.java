@@ -1,6 +1,6 @@
 package clase;
 
-public abstract class Aplicant{
+public abstract class Aplicant {
 	protected String nume;
 	protected String prenume;
 	protected int varsta;
@@ -12,12 +12,15 @@ public abstract class Aplicant{
 	public String getNume() {
 		return nume;
 	}
+
 	public void setNume(String nume) {
 		this.nume = nume;
 	}
+
 	public String getPrenume() {
 		return prenume;
 	}
+
 	public void setPrenume(String prenume) {
 		this.prenume = prenume;
 	}
@@ -33,7 +36,6 @@ public abstract class Aplicant{
 	}
 
 	public int getPunctaj() {
-
 		return punctaj;
 	}
 
@@ -41,18 +43,18 @@ public abstract class Aplicant{
 		this.punctaj = punctaj;
 	}
 
-
-	public void statut(){
-		if(punctaj>80)
-			System.out.println("Aplicantul " + nume + " " + prenume + " a fost acceptat.");
-		else
-			System.out.println("Aplicantul "+nume+" "+prenume+" nu a fost acceptat.");
+	public void statutAcceptareFinantare(int pragPunctaj) {
+		if (punctaj > pragPunctaj) {
+			System.out.println("Aplicantul " + nume + " " + prenume + " a fost acceptat. (PUNCTAJ:" + punctaj + ")");
+		} else {
+			System.out.println("Aplicantul " + nume + " " + prenume + " nu a fost acceptat.(PUNCTAJ:" + punctaj + ")");
+		}
 	}
-
 
 	public Aplicant() {
 		super();
 	}
+
 	public Aplicant(String nume, String prenume, int varsta, int punctaj, int nrProiecte, String[] denumiriProiecte) {
 		super();
 		this.nume = nume;
@@ -62,14 +64,21 @@ public abstract class Aplicant{
 		this.nrProiecte = nrProiecte;
 		this.denumiriProiecte = denumiriProiecte;
 	}
-	public int getNrProiecte() {
 
+	public int getNrProiecte() {
 		return nrProiecte;
 	}
-	public void setNrProiecte(int nrProiecte,String[] denumiriProiecte) {
+
+	public void setNrProiecte(int nrProiecte, String[] denumiriProiecte) {
 		this.denumiriProiecte = denumiriProiecte;
 		this.nrProiecte = nrProiecte;
 	}
 
 	public abstract void afiseazaFinantarePrimita();
+
+	public String getDetaliiGenerale() {
+		return String.format("Nume: %s, Prenume: %s, Varsta: %d, Punctaj: %d, Nr_proiecte: %d, Denumiri Proiecte: %s",
+				nume, prenume, varsta, punctaj, nrProiecte, String.join(", ", denumiriProiecte));
+
+	}
 }

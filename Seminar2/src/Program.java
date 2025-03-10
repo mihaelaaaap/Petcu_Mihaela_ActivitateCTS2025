@@ -18,6 +18,9 @@ public class Program {
 			listaAplicanti = aplicantiReader.readAplicant();
 			for(Aplicant aplicant:listaAplicanti)
 				System.out.println(aplicant.toString());
+
+//			for(Aplicant aplicant:listaAplicanti)
+//				aplicant.statutAcceptareFinantare(80);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

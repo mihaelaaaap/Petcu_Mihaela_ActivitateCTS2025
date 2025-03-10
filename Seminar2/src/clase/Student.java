@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Student extends Aplicant {
 	protected String facultate;
 	protected int anStudii;
-	private static float sumaFinantata = 20;
+	private static final float sumaFinantata = 20;
 
 	public String getFacultate() {
 		return facultate;
@@ -23,7 +23,6 @@ public class Student extends Aplicant {
 		this.anStudii = anStudii;
 	}
 
-
 	public Student() {
 		super();
 	}
@@ -35,7 +34,10 @@ public class Student extends Aplicant {
 	}
 	@Override
 	public String toString() {
-		return "Student: Nume=" + nume + ", Prenume=" + prenume + ", Varsta=" + varsta + ", Punctaj=" + punctaj + ", Nr_proiecte=" + nrProiecte +  ", Denumiri Proiecte=" + Arrays.toString(denumiriProiecte) + "Facultate=" + facultate + ", An_studii=" + anStudii ;
+		String detaliiGenerale = getDetaliiGenerale();
+		StringBuilder builder = new StringBuilder("Student: ");
+		builder.append(detaliiGenerale).append(", Facultate: " + facultate + ", An Studii: " + anStudii );
+		return builder.toString();
 	}
 
 	@Override

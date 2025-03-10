@@ -6,7 +6,7 @@ public class Elev extends Aplicant{
 
 	private int clasa;
 	private String tutore;
-	private static float sumaFinantata = 30;
+	private static final float sumaFinantata = 30;
 
 
 	public int getClasa() {
@@ -22,12 +22,12 @@ public class Elev extends Aplicant{
 		this.tutore = tutore;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Elev: Nume=" + nume + ", Prenume=" + prenume + ", Varsta="
-				+ varsta + ", Punctaj=" + punctaj + ", Nr_proiecte=" + nrProiecte  + ", Denumiri Proiecte="
-				+ Arrays.toString(denumiriProiecte) + "Clasa=" + clasa + ", Tutore=" + tutore;
+		String detaliiGenerale = getDetaliiGenerale();
+		StringBuilder builder = new StringBuilder("Student: ");
+		builder.append(detaliiGenerale).append(", Clasa: " + clasa + ", Tutore: " + tutore);
+		return builder.toString();
 	}
 
 	public Elev() {
@@ -43,7 +43,7 @@ public class Elev extends Aplicant{
 
 	@Override
 	public void afiseazaFinantarePrimita() {
-		System.out.println("Elevul" + getNume() + " " + getPrenume() + " primeste" + sumaFinantata + " Euro/zi in proiect.");
+		System.out.println("Elevul " + getNume() + " " + getPrenume() + " primeste " + sumaFinantata + " Euro/zi in proiect.");
 	}
 
 

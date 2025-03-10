@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Angajat extends Aplicant{
     private String ocupatie;
     private int salariu;
-    private static float sumaFinantata = 10;
+    private static final float sumaFinantata = 10;
 
     public String getOcupatie() {
         return ocupatie;
@@ -31,9 +31,10 @@ public class Angajat extends Aplicant{
 
     @Override
     public String toString() {
-        return "Angajat: Nume= " + nume + ", Prenume= " + prenume
-                + ", Varsta= " + varsta + ", Punctaj= " + punctaj + ", Nr_proiecte= " + nrProiecte + ", Denumiri Proiecte= "
-                + Arrays.toString(denumiriProiecte) + "Ocupatie= " + ocupatie + ", salariu= " + salariu;
+        String detaliiGenerale = getDetaliiGenerale();
+        StringBuilder builder = new StringBuilder("Angajat: ");
+        builder.append(detaliiGenerale).append(", Ocupatie: " + ocupatie + ", salariu: " + salariu);
+        return builder.toString();
     }
 
     @Override
