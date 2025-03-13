@@ -44,11 +44,11 @@ public abstract class Aplicant {
 	}
 
 	public void statutAcceptareFinantare(int pragPunctaj) {
-		if (punctaj > pragPunctaj) {
-			System.out.println("Aplicantul " + nume + " " + prenume + " a fost acceptat. (PUNCTAJ:" + punctaj + ")");
-		} else {
-			System.out.println("Aplicantul " + nume + " " + prenume + " nu a fost acceptat.(PUNCTAJ:" + punctaj + ")");
-		}
+		String decizieAcceptare = punctaj > pragPunctaj ? " a fost acceptat. (PUNCTAJ:" + this.punctaj + ")"
+				: " nu a fost acceptat.(PUNCTAJ:" + punctaj + ")";
+		StringBuilder builder = new StringBuilder("Aplicantul ");
+		builder.append(this.nume).append(" ").append(this.prenume).append(decizieAcceptare);
+		System.out.println(builder.toString());
 	}
 
 	public Aplicant() {
