@@ -8,6 +8,8 @@ public class MainRegistry {
         AutoritatePescuit autoritatePescuit = AutoritatePescuit.getInstance();
         Autorizatie autorizatie = autoritatePescuit.emiteAutorizatie("pescar");
         System.out.println(autorizatie.toString());
+        Autorizatie autorizatie2 = autoritatePescuit.emiteAutorizatie("pescar2");
+        System.out.println(autorizatie2.toString());
 
     }
 }
