@@ -1,10 +1,10 @@
 package ro.cts.seminar5.FactoryMethod.fabrici;
 
-import FactoryMethod.clase.PersonalSpital;
-import FactoryMethod.clase.Portar;
-import FactoryMethod.clase.Secretar;
+import ro.cts.seminar5.FactoryMethod.clase.PersonalSpital;
+import ro.cts.seminar5.FactoryMethod.clase.Portar;
+import ro.cts.seminar5.FactoryMethod.clase.Secretar;
 
-import java.net.PortUnreachableException;
+
 
 public class FactoryPersonalNonMedical implements FactoryPersonal {
     private int vechime;

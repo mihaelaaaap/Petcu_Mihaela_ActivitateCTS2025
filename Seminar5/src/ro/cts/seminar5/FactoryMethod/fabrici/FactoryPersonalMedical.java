@@ -1,8 +1,9 @@
 package ro.cts.seminar5.FactoryMethod.fabrici;
 
-import FactoryMethod.clase.Asistent;
-import FactoryMethod.clase.Medic;
-import FactoryMethod.clase.PersonalSpital;
+
+import ro.cts.seminar5.FactoryMethod.clase.Asistent;
+import ro.cts.seminar5.FactoryMethod.clase.Medic;
+import ro.cts.seminar5.FactoryMethod.clase.PersonalSpital;
 
 public class FactoryPersonalMedical implements FactoryPersonal {
 
