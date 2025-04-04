@@ -1,5 +1,6 @@
 package Spital.A4_Prototype.clase;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Reteta extends AbstractReteta {
@@ -14,7 +15,8 @@ public class Reteta extends AbstractReteta {
     @Override
     public AbstractReteta clone() {
         Reteta reteta = new Reteta();
-        reteta.setCompozitieMedicament(this.getCompozitieMedicament());
+        Map<String, Double> compozitieClona = new HashMap<>(this.getCompozitieMedicament());
+        reteta.setCompozitieMedicament(compozitieClona);
         reteta.setDenumireMedicament(this.getDenumireMedicament());
         return reteta;
     }
