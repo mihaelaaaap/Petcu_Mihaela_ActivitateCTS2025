@@ -13,8 +13,8 @@ public class Main {
         FactorySport baschet = new FactoryBaschet();
 
         Sport meciFotbal = fotbal.creeazaMeci("FCSB", "Farul Constanta");
-        Sport meciHandbal = fotbal.creeazaMeci("CSM Unirea", "Rapid Bucuresti");
-        Sport meciBaschet = fotbal.creeazaMeci("Vulturii", "Soimii");
+        Sport meciHandbal = handbal.creeazaMeci("CSM Unirea", "Rapid Bucuresti");
+        Sport meciBaschet = baschet.creeazaMeci("Vulturii", "Soimii");
 
         meciHandbal.detaliiMeci();
         meciFotbal.detaliiMeci();
